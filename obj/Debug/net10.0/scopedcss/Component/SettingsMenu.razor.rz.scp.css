@@ -1,13 +1,55 @@
-.container[b-b8neyzioft] {
+label[b-b8neyzioft] {
+    font-size: 2rem;
+}
+form > div[b-b8neyzioft] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container form[b-b8neyzioft] {
+button[b-b8neyzioft] {
+    background: rgb(156, 116, 252);
+    color: white;
+    margin-block-start: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+    font-size: 4rem;
+}
+button:hover[b-b8neyzioft] {
+    cursor: pointer;
+    background: rgb(110, 55, 240);
+}
+#difficulty > div[b-b8neyzioft] {
     display: flex;
-    flex-direction: column;
+}
+
+#operations[b-b8neyzioft] {
+    display: flex;
+    gap: 0.25rem;
+}
+#operations > div[b-b8neyzioft] {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
+#operations label[b-b8neyzioft] {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+.vertical[b-b8neyzioft] {
+    display: flex;
+    flex-direction: column;
+}
 .horizontal-container[b-b8neyzioft] {
     display: flex;
+}
+
+.time-label[b-b8neyzioft] {
+    font-size: 2rem;
+    gap: 5rem;
 }

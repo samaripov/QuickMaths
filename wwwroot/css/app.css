@@ -10,6 +10,77 @@ h3, p {
     margin: 0;
     padding: 0;
 }
+input {
+    font-size: 2rem;
+    border: 3px solid rgb(156, 116, 252);
+    border-radius: 0.5rem;
+    background: transparent;
+    padding: 0.2rem;
+}
+#operations input[type="checkbox"] {
+    display: none;
+}
+#operations label{
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+
+#operations input[type="checkbox"] + label{
+    font-size: 5rem;
+    color: gray;
+    border: 3px solid gray;
+}
+#operations input[type="checkbox"]:checked + label{
+    color: rgb(156, 116, 252);
+    border: 3px solid rgb(156, 116, 252);
+    transform: scale(103%);
+}
+
+#inputText {
+    width: 20rem;
+}
+#roundTime input{
+    font-size: 3rem;
+    width: 4rem;
+    border: 3px solid rgb(156, 116, 252);
+    border-radius: 0.5rem;
+    background: transparent;
+    text-align: end;
+    padding-inline: 0.5rem;
+    overflow: hidden;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#difficulty label {
+    border: 3px solid gray;
+    border-radius: 0.5rem;
+    width: 9rem;
+    margin: 0.1rem;
+    padding: 0.5rem;
+    color: grey;
+    transition: transform 0.2s ease-in-out;
+}
+
+#difficulty input[type=radio] {
+    display: none;
+}
+#difficulty input[type=radio]:checked + label {
+    border: 3px solid rgb(156, 116, 252);
+    color: rgb(156, 116, 252);
+    transform: scale(102%);
+}
+
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }

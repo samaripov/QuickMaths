@@ -1,13 +1,55 @@
-.container {
+label {
+    font-size: 2rem;
+}
+form > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container form {
+button {
+    background: rgb(156, 116, 252);
+    color: white;
+    margin-block-start: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+    font-size: 4rem;
+}
+button:hover {
+    cursor: pointer;
+    background: rgb(110, 55, 240);
+}
+#difficulty > div {
     display: flex;
-    flex-direction: column;
+}
+
+#operations {
+    display: flex;
+    gap: 0.25rem;
+}
+#operations > div {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
+#operations label {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
 .horizontal-container {
     display: flex;
+}
+
+.time-label {
+    font-size: 2rem;
+    gap: 5rem;
 }
