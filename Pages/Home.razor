@@ -17,17 +17,17 @@
         </a>
         <h3>@(showMenu ? "Settings" : "Quick Maths")</h3>
     </div>
-    @if (showMenu)
-    {
-        <SettingsMenu />
-    }
-    else
-    {
-        <div class="problem-numpad-container">
+    <div class="center-children">
+        @if (showMenu)
+        {
+            <SettingsMenu />
+        }
+        else
+        {
             <QuickMaths />
             <NumPad />
-        </div>
-    }
+        }
+    </div>
 </div>
 
 

@@ -85,6 +85,9 @@ img[b-rdcaplgchl] {
 }
 /* /Component/SettingsMenu.razor.rz.scp.css */
 .container[b-b8neyzioft] {
+}
+
+.container form[b-b8neyzioft] {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,13 +115,9 @@ main[b-y0ouk7zasq] {
     padding: 0.25rem;
     border-radius: 0.5rem;
     font-size: 4rem;
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto;
-    align-items: center;
-    justify-content: center;
+    width: 57rem;
+    height: 38rem;
 }
-
 .horizontal-container[b-n67vpdv12x] {
     width: 100%;
     display: grid;
@@ -139,7 +138,7 @@ main[b-y0ouk7zasq] {
 .rotate svg[b-n67vpdv12x] {
     transform: rotate(180deg);
 }
-.problem-numpad-container[b-n67vpdv12x] {
+.center-children[b-n67vpdv12x] {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -151,7 +150,7 @@ main[b-y0ouk7zasq] {
         font-size: 1.5rem;
     }
 
-    .problem-numpad-container[b-n67vpdv12x] {
+    .center-children[b-n67vpdv12x] {
         flex-direction: column;
     }
 
