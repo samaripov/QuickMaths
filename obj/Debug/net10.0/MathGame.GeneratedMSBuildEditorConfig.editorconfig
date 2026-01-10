@@ -32,10 +32,6 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/sam/Desktop/Blazor/MathGame/Component/SettingsMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50L1NldHRpbmdzTWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/sam/Desktop/Blazor/MathGame/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90Rm91bmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -51,6 +47,10 @@ build_metadata.AdditionalFiles.CssScope = b-71ih1ypdgt
 [/home/sam/Desktop/Blazor/MathGame/Component/QuickMaths.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50L1F1aWNrTWF0aHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-rdcaplgchl
+
+[/home/sam/Desktop/Blazor/MathGame/Component/SettingsMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50L1NldHRpbmdzTWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-b8neyzioft
 
 [/home/sam/Desktop/Blazor/MathGame/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L01haW5MYXlvdXQucmF6b3I=

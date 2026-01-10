@@ -1,5 +1,47 @@
-Settings
+<div class="container">
+    <EditForm EditContext="editContext" OnValidSubmit="HandleValidSubmit">
+        <div>
+            <label for="inputText">Numbers to focus on</label>
+            <InputText id="inputText" @bind-Value="inputText" placeholder="Enter numbers (e.g. 1, 2, 7, 4 ...)" />
+        </div>
+
+        <div>`
+            <label for="roundTime">Exercise Time</label>
+            <div id="roundTime">
+                <InputNumber id="minutes" @bind-Value="minutes" placeholder="Minutes" />
+                <span> : </span>
+                <InputNumber id="seconds" @bind-Value="seconds" placeholder="Seconds" />
+            </div>
+        </div>
+
+        <div class="horizontal-container">
+            <label for="difficulty">Difficulty</label>
+            <div id="difficulty">
+                @foreach (var option in difficultyOptions)
+                {
+                    <input type="radio" id="@option" name="difficultyOptions" @bind="@selectedDifficulty" />
+                    <label for="@option">@option</label>
+                }
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </EditForm>
+</div>
 
 @code {
-    
+    private EditContext? editContext;
+    protected override void OnInitialized()
+    {
+        editContext = new EditContext(this);
+    }
+    private string inputText = "";
+    private string selectedDifficulty;
+    private string[] difficultyOptions = new string[] { "Easy", "Normal", "Hard" };
+    private int minutes = 5;
+    private int seconds = 0;
+    private void HandleValidSubmit()
+    {
+
+    }
 }

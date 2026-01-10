@@ -83,6 +83,17 @@ img[b-rdcaplgchl] {
 .stat-bar *[b-rdcaplgchl] {
     font-size: 2.5rem;
 }
+/* /Component/SettingsMenu.razor.rz.scp.css */
+.container[b-b8neyzioft] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-container[b-b8neyzioft] {
+    display: flex;
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 main[b-y0ouk7zasq] {
     background-image: url("./public/dimitri-iakymuk-mcr10j_b6sm-unsplash.jpg");
