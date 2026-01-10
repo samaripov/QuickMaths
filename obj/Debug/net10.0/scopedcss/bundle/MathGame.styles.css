@@ -1,0 +1,156 @@
+/* /Component/NumPad.razor.rz.scp.css */
+.numpad[b-71ih1ypdgt] {
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    padding: 0.5rem;
+}
+
+.numpad button[b-71ih1ypdgt] {
+    font-weight: 1000;
+    width: 7rem;
+    height: 7rem;
+    color: rgb(156, 116, 252);
+    border: 3px solid rgb(156, 116, 252);
+    border-radius: 0.5rem;
+    font-size: 5rem;
+    transition: all 0.05s ease-in-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numpad button:hover:not(:disabled)[b-71ih1ypdgt] {
+    cursor: pointer;
+    color: rgb(156, 116, 252);
+    transform: scale(105%);
+}
+.play-pause svg[b-71ih1ypdgt] {
+    width: 3rem;
+    height: 3rem;
+}
+@media only screen and (max-width: 1000px) {
+    .numpad[b-71ih1ypdgt] {
+        visibility: visible;
+    }
+    .numpad button[b-71ih1ypdgt] {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .numpad[b-71ih1ypdgt] {
+        visibility: visible;
+    }
+    .numpad button[b-71ih1ypdgt] {
+        font-size: 5rem;
+        width: 6rem;
+        height: 6rem;
+    }
+}
+/* /Component/QuickMaths.razor.rz.scp.css */
+.problems-and-stats[b-rdcaplgchl] {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+}
+
+img[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    width: 18rem;
+    height: 18rem;
+}
+
+.horizontal-container[b-rdcaplgchl] {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-bar[b-rdcaplgchl] {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.stat-bar *[b-rdcaplgchl] {
+    font-size: 2.5rem;
+}
+/* /Layout/MainLayout.razor.rz.scp.css */
+main[b-y0ouk7zasq] {
+    background-image: url("./public/dimitri-iakymuk-mcr10j_b6sm-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    color: rgb(156, 116, 252);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* /Pages/Home.razor.rz.scp.css */
+.container[b-n67vpdv12x] {
+    background: rgba(255, 255, 255, 0.788);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 4rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-container[b-n67vpdv12x] {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+.space-between[b-n67vpdv12x] {
+    justify-content: space-between;
+}
+
+.gear svg[b-n67vpdv12x] {
+    transition: all 0.25s;
+    width: 7rem;
+    height: 7rem;
+}
+
+.rotate svg[b-n67vpdv12x] {
+    transform: rotate(180deg);
+}
+.problem-numpad-container[b-n67vpdv12x] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .info-bar *[b-n67vpdv12x] {
+        font-size: 1.5rem;
+    }
+
+    .problem-numpad-container[b-n67vpdv12x] {
+        flex-direction: column;
+    }
+
+    .container[b-n67vpdv12x] {
+        width: 90%;
+        font-size: 2rem;
+    }
+
+    .gear svg[b-n67vpdv12x] {
+        width: 4rem;
+        height: 4rem;
+    }
+}

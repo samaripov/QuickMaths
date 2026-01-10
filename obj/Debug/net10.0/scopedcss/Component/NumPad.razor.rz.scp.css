@@ -1,0 +1,55 @@
+.numpad[b-71ih1ypdgt] {
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    padding: 0.5rem;
+}
+
+.numpad button[b-71ih1ypdgt] {
+    font-weight: 1000;
+    width: 7rem;
+    height: 7rem;
+    color: rgb(156, 116, 252);
+    border: 3px solid rgb(156, 116, 252);
+    border-radius: 0.5rem;
+    font-size: 5rem;
+    transition: all 0.05s ease-in-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numpad button:hover:not(:disabled)[b-71ih1ypdgt] {
+    cursor: pointer;
+    color: rgb(156, 116, 252);
+    transform: scale(105%);
+}
+.play-pause svg[b-71ih1ypdgt] {
+    width: 3rem;
+    height: 3rem;
+}
+@media only screen and (max-width: 1000px) {
+    .numpad[b-71ih1ypdgt] {
+        visibility: visible;
+    }
+    .numpad button[b-71ih1ypdgt] {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .numpad[b-71ih1ypdgt] {
+        visibility: visible;
+    }
+    .numpad button[b-71ih1ypdgt] {
+        font-size: 5rem;
+        width: 6rem;
+        height: 6rem;
+    }
+}

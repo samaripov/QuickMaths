@@ -1,0 +1,58 @@
+.container {
+    background: rgba(255, 255, 255, 0.788);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 4rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.gear svg {
+    transition: all 0.25s;
+    width: 7rem;
+    height: 7rem;
+}
+
+.rotate svg {
+    transform: rotate(180deg);
+}
+.problem-numpad-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .info-bar * {
+        font-size: 1.5rem;
+    }
+
+    .problem-numpad-container {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 90%;
+        font-size: 2rem;
+    }
+
+    .gear svg {
+        width: 4rem;
+        height: 4rem;
+    }
+}

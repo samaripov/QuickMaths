@@ -1,0 +1,28 @@
+.problems-and-stats[b-rdcaplgchl] {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+}
+
+img[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    width: 18rem;
+    height: 18rem;
+}
+
+.horizontal-container[b-rdcaplgchl] {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-bar[b-rdcaplgchl] {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.stat-bar *[b-rdcaplgchl] {
+    font-size: 2.5rem;
+}
