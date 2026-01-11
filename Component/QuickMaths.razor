@@ -18,5 +18,13 @@
 </div>
 
 @code {
-
+    protected override void OnInitialized()
+    {
+        // Subscribe to the event
+        problem.numpadInputChanged += StateHasChanged;
+    }
+    public void Dispose()
+    {
+        problem.numpadInputChanged -= StateHasChanged;
+    }
 }

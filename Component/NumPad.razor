@@ -40,21 +40,24 @@
     private bool playState = false;
     private void numpadNumber(int num)
     {
-        if(problem.numpadInput == "0") {
+        if (problem.numpadInput == "0")
+        {
             problem.numpadInput = "";
         }
         problem.numpadInput = $"{problem.numpadInput}{num}";
-        Console.WriteLine(problem.numpadInput);
     }
-    private void backspace() {
-        problem.numpadInput = problem.numpadInput.Substring(0, problem.numpadInput.Length-1);
-        if(problem.numpadInput.Length == 0) {
+    private void backspace()
+    {
+        problem.numpadInput = problem.numpadInput.Substring(0, problem.numpadInput.Length - 1);
+        if (problem.numpadInput.Length == 0)
+        {
             problem.numpadInput = "0";
         }
-        Console.WriteLine(problem.numpadInput);
     }
     private void playOrPause()
     {
         playState = !playState;
     }
+
+    
 }
