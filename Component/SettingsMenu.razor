@@ -64,6 +64,8 @@
     {
         editContext = new EditContext(this);
         selectedDifficulty = config.selectedDifficulty;
+        minutes = config.roundDurationInSeconds / 60;
+        seconds = config.roundDurationInSeconds % 60;
     }
     private void HandleValidSubmit()
     {
