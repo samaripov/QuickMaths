@@ -31,16 +31,19 @@
         switch (operation)
         {
             case "+":
-                GeneratePlusProblem();
+                GenerateAdditionProblem();
                 break;
             case "-":
-                GenerateMinusProblem();
+                GenerateSubtractionProblem();
+                break;
+            case "×":
+                GenerateMultiplicationProblem();
                 break;
         }
         longestNumberLength = Math.Max(Math.Max(problem.topNum.Length, problem.bottomNum.Length), problem.numpadInput.Length);
     }
 
-    private void GeneratePlusProblem()
+    private void GenerateAdditionProblem()
     {
         var topNum = getRandomNumBasedOnDifficulty();
         var bottomNum = getRandomNumBasedOnDifficulty();
@@ -50,7 +53,7 @@
         problem.answer = $"{topNum + bottomNum}";
     }
 
-    private void GenerateMinusProblem()
+    private void GenerateSubtractionProblem()
     {
         var num1 = getRandomNumBasedOnDifficulty();
         var num2 = getRandomNumBasedOnDifficulty();
@@ -66,6 +69,16 @@
         problem.answer = $"{answer}";
         problem.bottomNum = $"{topNum + answer}";
     }
+
+    private void GenerateMultiplicationProblem(){
+        var topNum = getRandomNumBasedOnDifficulty();
+        var bottomNum = getRandomNumBasedOnDifficulty();
+
+        problem.topNum = $"{topNum}";
+        problem.bottomNum = $"{bottomNum}";
+        problem.answer = $"{topNum * bottomNum}";
+    }
+
     private int getRandomNumBasedOnDifficulty()
     {
         switch (config.selectedDifficulty)
