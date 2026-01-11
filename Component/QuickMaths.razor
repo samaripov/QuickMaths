@@ -20,15 +20,44 @@
 </div>
 
 @code {
-    private string operation = ""; 
-    private void GenerateProblem() {
+    private string operation = "";
+    private void GenerateProblem()
+    {
         operation = config.selectedOperations[random.Next(config.selectedOperations.Count)];
+
+        switch (operation)
+        {
+            case "+":
+                GeneratePlusProblem();
+                break;
+        }
     }
 
+    private void GeneratePlusProblem()
+    {
+        var topNum = getRandomNumBasedOnDifficulty();
+        var bottomNum = getRandomNumBasedOnDifficulty();
+
+        problem.topNum = $"{topNum}";
+        problem.bottomNum = $"{bottomNum}";
+        problem.answer = $"{topNum + bottomNum}";
+    }
+
+    private int getRandomNumBasedOnDifficulty()
+    {
+        switch (config.selectedDifficulty)
+        {
+            case "Normal":
+                return random.Next(2, 100);
+            case "Hard":
+                return random.Next(2,100);
+        }
+        // Easy
+        return random.Next(1,10);
+    }
     protected override void OnInitialized()
     {
         GenerateProblem();
-        // Subscribe to the event
         problem.CurrentProblemStateChanged += StateHasChanged;
     }
     public void Dispose()
