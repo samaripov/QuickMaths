@@ -60,6 +60,7 @@ img[b-rdcaplgchl] {
     border-radius: 0.5rem;
     width: 18rem;
     height: 18rem;
+    margin-block: 0.25rem;
 }
 button[b-rdcaplgchl] {
     width: 18rem;
@@ -67,6 +68,8 @@ button[b-rdcaplgchl] {
     font-weight: bold;
     align-self: flex-start;
     justify-self: start;
+    margin-block: 0.25rem;
+    padding: 0.25rem;
 }
 
 #operation[b-rdcaplgchl] {
@@ -103,7 +106,6 @@ button[b-rdcaplgchl] {
 }
 .problems-and-stats[b-rdcaplgchl] {
     display: flex;
-    gap: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;

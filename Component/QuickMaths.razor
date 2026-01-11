@@ -18,6 +18,7 @@
         </div>
     </div>
     <button>Reveal Answer</button>
+    <button @onclick="GenerateProblem">Skip</button>
 </div>
 
 @code {
@@ -58,20 +59,16 @@
 
     private void GenerateSubtractionProblem()
     {
-        var topNum = getRandomNumBasedOnDifficulty();
         var bottomNum = getRandomNumBasedOnDifficulty();
+        var answer = getRandomNumBasedOnDifficulty();
 
-        while(topNum <= bottomNum) {
-            topNum = getRandomNumBasedOnDifficulty();
-            bottomNum = getRandomNumBasedOnDifficulty();
-        }
-        
-        problem.topNum = $"{topNum}";
         problem.bottomNum = $"{bottomNum}";
-        problem.answer = $"{topNum - bottomNum}";
+        problem.answer = $"{answer}";
+        problem.topNum = $"{answer + bottomNum}";
     }
 
-    private void GenerateMultiplicationProblem(){
+    private void GenerateMultiplicationProblem()
+    {
         var topNum = getRandomNumBasedOnDifficulty();
         var bottomNum = getRandomNumBasedOnDifficulty();
 
@@ -82,42 +79,45 @@
 
     private void GenerateDivisionProblem()
     {
-        var num1 = getRandomNumBasedOnDifficulty();
-        var num2 = getRandomNumBasedOnDifficulty();
+        var bottomNum = getRandomNumBasedOnDifficulty(true);
+        var answer = getRandomNumBasedOnDifficulty();
 
-        var topNum = Math.Max(num1, num2);
-        var answer = Math.Min(num1, num2);
-        
-        problem.topNum = $"{topNum}";
+        problem.bottomNum = $"{bottomNum}";
         problem.answer = $"{answer}";
-        problem.bottomNum = $"{topNum + answer}";
+        problem.topNum = $"{bottomNum * answer}";
     }
 
-    private int getRandomNumBasedOnDifficulty()
+    private int getRandomNumBasedOnDifficulty(bool limitRange = false)
     {
+        if (limitRange)
+        {
+            return random.Next(10, 20);
+        }
         switch (config.selectedDifficulty)
         {
             case "Normal":
                 return random.Next(10, 100);
             case "Hard":
-                return random.Next(100,1000);
+                return random.Next(100, 1000);
         }
         // Easy
-        return random.Next(1,10);
+        return random.Next(1, 10);
     }
     protected override void OnInitialized()
-    {   
+    {
         GenerateProblem();
         problem.CurrentProblemStateChanged += OnProblemStateChanged;
-        
+
     }
     public void Dispose()
     {
         problem.CurrentProblemStateChanged -= StateHasChanged;
     }
 
-    public void OnProblemStateChanged() {
-        if(problem.numpadInput == problem.answer) {
+    public void OnProblemStateChanged()
+    {
+        if (problem.numpadInput == problem.answer)
+        {
             GenerateProblem();
             correctCount++;
         }

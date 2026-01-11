@@ -23,6 +23,9 @@ button {
     border-radius: 0.5rem;
     border: none;
 }
+button:hover {
+    background: rgb(110, 55, 240);
+}
 #operations input[type="checkbox"] {
     display: none;
 }

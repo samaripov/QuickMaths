@@ -2,6 +2,7 @@ img {
     border-radius: 0.5rem;
     width: 18rem;
     height: 18rem;
+    margin-block: 0.25rem;
 }
 button {
     width: 18rem;
@@ -9,6 +10,8 @@ button {
     font-weight: bold;
     align-self: flex-start;
     justify-self: start;
+    margin-block: 0.25rem;
+    padding: 0.25rem;
 }
 
 #operation {
@@ -45,7 +48,6 @@ button {
 }
 .problems-and-stats {
     display: flex;
-    gap: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
