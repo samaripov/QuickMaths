@@ -8,7 +8,6 @@ img {
     color: rgb(226, 43, 217);
     font-size: 3rem;
     font-weight: bold;
-    transform: translate(-5.5rem, 3.7rem);
 }
 #top-num {
     transform: translateY(0.5rem);
@@ -21,7 +20,6 @@ img {
     border-radius: 0.5rem;
     background: rgb(226, 43, 217);
     height: 0.25rem;
-    width: 5.5rem;
     transform: translateY(-1.25rem);
 }
 #result {

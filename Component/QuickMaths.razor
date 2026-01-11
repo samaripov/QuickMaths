@@ -11,9 +11,9 @@
         <img src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
         <div class="equation">
             <p id="top-num">@problem.topNum</p>
-            <p id="operation">@operation</p>
+            <p style="transform: translate(-@(problem.numpadInput.Length * 2.8)rem, 3.7rem)" id="operation">@operation</p>
             <p id="bottom-num">@problem.bottomNum</p>
-            <p id="line"></p>
+            <p style="width: @(problem.numpadInput.Length * 2.8)rem" id="line"></p>
             <p id="result">@problem.numpadInput</p>
         </div>
     </div>
