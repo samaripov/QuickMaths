@@ -25,16 +25,8 @@
                 @foreach (var option in config.difficultyOptions)
                 {
                     <div>
-                        @if (config.selectedDifficulty == option)
-                        {
-                            <input id="@option" type="radio" name="difficultyOptions" value="@option"
-                                @onchange="(e) => UpdateDifficulty(option)" checked />
-                        }
-                        else
-                        {
-                            <input id="@option" type="radio" name="difficultyOptions" value="@option"
-                                @onchange="(e) => UpdateDifficulty(option)" />
-                        }
+                        <input id="@option" type="radio" name="difficultyOptions" value="@option"
+                            @onchange="(e) => UpdateDifficulty(option)" checked="@(config.selectedDifficulty == option)" />
                         <label id="@option-label" for="@option">@option</label>
                     </div>
                 }
@@ -47,15 +39,17 @@
             @foreach (var option in config.operationsOptions)
             {
                 <div>
-                    @if (config.selectedOperations.Contains(option))
+                    @if (config.selectedOperations.Count == 1 && config.selectedOperations.Contains(option))
                     {
                         <input type="checkbox" id="@option" value="@option"
-                            @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())" checked />
+                            @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())"
+                            checked="@config.selectedOperations.Contains(option)" disabled />
                     }
                     else
                     {
                         <input type="checkbox" id="@option" value="@option"
-                            @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())" />
+                            @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())"
+                            checked="@config.selectedOperations.Contains(option)" />
                     }
                     <label for="@option">@option</label>
                 </div>
@@ -87,15 +81,23 @@
     {
         if (value == "True")
         {
-            config.selectedOperations.Add(option);
+            if (!config.selectedOperations.Contains(option)) // Ensure we add only if it's not already there
+            {
+                config.selectedOperations.Add(option);
+            }
         }
-        else
+        else if (config.selectedOperations.Count > 1)
         {
-            config.selectedOperations.Remove(option);
+            // Remove the option from the selected operations only if it exists
+            if (config.selectedOperations.Contains(option))
+            {
+                config.selectedOperations.Remove(option);
+            }
         }
     }
 
-    private void UpdateDifficulty(string option) {
+    private void UpdateDifficulty(string option)
+    {
         config.selectedDifficulty = option;
     }
 }
