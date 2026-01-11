@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>MathGame</title>
     <base href="/" />
-    <link href="_framework/dotnet.9hkljtkz72.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-Ex6GHW4LIimsZXqPnjQZaDSbdlF9aUt9RcJ6aP207Uc=" />
+    <link href="_framework/dotnet.ahdbi9engs.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-AjHwyPJfCMjUTBys0/mqa5DRIAjv+21OdZ/IY6pStiw=" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="MathGame.styles.css" rel="stylesheet" />
@@ -14,9 +14,10 @@
   "imports": {
     "./_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.lib.module.js": "./_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.99zm1jdh75.lib.module.js",
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.9hkljtkz72.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.ahdbi9engs.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.cs8mcre4gh.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.0j6ezsi0n0.js"
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.0j6ezsi0n0.js",
+    "./js/problemFeedback.js": "./js/problemFeedback.h83a594qas.js"
   },
   "scopes": {},
   "integrity": {
@@ -24,12 +25,14 @@
     "./_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.lib.module.js": "sha256-A8e6zZwhOqf7lDQqbbCYcAUv4wGE9aQxOo4WyYxR//0=",
     "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
     "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
-    "./_framework/dotnet.9hkljtkz72.js": "sha256-Ex6GHW4LIimsZXqPnjQZaDSbdlF9aUt9RcJ6aP207Uc=",
-    "./_framework/dotnet.js": "sha256-Ex6GHW4LIimsZXqPnjQZaDSbdlF9aUt9RcJ6aP207Uc=",
+    "./_framework/dotnet.ahdbi9engs.js": "sha256-AjHwyPJfCMjUTBys0/mqa5DRIAjv+21OdZ/IY6pStiw=",
+    "./_framework/dotnet.js": "sha256-AjHwyPJfCMjUTBys0/mqa5DRIAjv+21OdZ/IY6pStiw=",
     "./_framework/dotnet.native.cs8mcre4gh.js": "sha256-/I3SDHIle7heAxlUGBrgxax+lkKyWyRLBVEJmTHJSCs=",
     "./_framework/dotnet.native.js": "sha256-/I3SDHIle7heAxlUGBrgxax+lkKyWyRLBVEJmTHJSCs=",
     "./_framework/dotnet.runtime.0j6ezsi0n0.js": "sha256-jCsbbdXoVd1zzGc0fQT2sz4mKuv0ANdurPVGo5Sc2jg=",
-    "./_framework/dotnet.runtime.js": "sha256-jCsbbdXoVd1zzGc0fQT2sz4mKuv0ANdurPVGo5Sc2jg="
+    "./_framework/dotnet.runtime.js": "sha256-jCsbbdXoVd1zzGc0fQT2sz4mKuv0ANdurPVGo5Sc2jg=",
+    "./js/problemFeedback.h83a594qas.js": "sha256-4devslqxv6g7FMVjah+Fp2kD4Pn08x5K4lwxDUcsRbM=",
+    "./js/problemFeedback.js": "sha256-4devslqxv6g7FMVjah+Fp2kD4Pn08x5K4lwxDUcsRbM="
   }
 }</script>
 </head>
@@ -48,6 +51,7 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
+    <script src="./js/problemFeedback.js"></script>
     <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
 </body>
 

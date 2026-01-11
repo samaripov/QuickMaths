@@ -1,12 +1,13 @@
 @inject CurrentProblem problem
 @inject QuickMathsConfig config
 @inject ModuleState moduleState
+@inject IJSRuntime JSRuntime
 
 @inject Random random
 
 <DialogBox>
     <p>Answer is @problem.answer</p>
-   
+
 </DialogBox>
 
 <div class="problems-and-stats">
@@ -15,7 +16,7 @@
         <p>Correct @correctCount</p>
     </div>
     <div class="horizontal-container">
-        <img src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
+        <img id="feedback-img" src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
         <div class="equation">
             <p id="top-num">@problem.topNum</p>
             <p style="transform: translate(-@(longestNumberLength * 2.8)rem, 3.7rem)" id="operation">@operation</p>
@@ -26,6 +27,15 @@
     </div>
     <button @onclick="RevealAnswer">Reveal Answer</button>
     <button @onclick="GenerateProblem">Skip</button>
+
+    <audio id="correctAudio">
+        <source src="./public/correct/yipe.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="incorrectAudio">
+        <source src="./public/incorrect/sad-hamster.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </div>
 
 @code {
@@ -33,7 +43,8 @@
     private bool answerRevealed = false;
     private int longestNumberLength = 1;
     private string operation = "";
-    private void RevealAnswer(){
+    private void RevealAnswer()
+    {
         moduleState.Visible = true;
         answerRevealed = true;
     }
@@ -82,7 +93,7 @@
     private void GenerateMultiplicationProblem()
     {
         var topNum = getRandomNumBasedOnDifficulty();
-        var bottomNum = getRandomNumBasedOnDifficulty();
+        var bottomNum = getRandomNumBasedOnDifficulty(true);
 
         problem.topNum = $"{topNum}";
         problem.bottomNum = $"{bottomNum}";
@@ -126,16 +137,20 @@
         problem.CurrentProblemStateChanged -= StateHasChanged;
     }
 
-    public void OnProblemStateChanged()
+    public async void OnProblemStateChanged()
     {
         if (problem.numpadInput == problem.answer)
         {
-            GenerateProblem();
-            if (!answerRevealed) {
+            if (!answerRevealed)
+            {
                 correctCount++;
-            } else {
+                await JSRuntime.InvokeVoidAsync("correct");
+            }
+            else
+            {
                 answerRevealed = false;
             }
+            GenerateProblem();
         }
         StateHasChanged();
     }
