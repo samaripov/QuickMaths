@@ -5,7 +5,7 @@
 <div class="problems-and-stats">
     <div class="horizontal-container stat-bar">
         <p>Time 5:00</p>
-        <p>Correct 0</p>
+        <p>Correct @correctCount</p>
     </div>
     <div class="horizontal-container">
         <img src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
@@ -17,9 +17,11 @@
             <p id="result">@problem.numpadInput</p>
         </div>
     </div>
+    <button>Reveal Answer</button>
 </div>
 
 @code {
+    private int correctCount = 0;
     private int longestNumberLength = 1;
     private string operation = "";
     private void GenerateProblem()
@@ -30,6 +32,9 @@
         {
             case "+":
                 GeneratePlusProblem();
+                break;
+            case "-":
+                GenerateMinusProblem();
                 break;
         }
         longestNumberLength = Math.Max(Math.Max(problem.topNum.Length, problem.bottomNum.Length), problem.numpadInput.Length);
@@ -45,6 +50,22 @@
         problem.answer = $"{topNum + bottomNum}";
     }
 
+    private void GenerateMinusProblem()
+    {
+        var num1 = getRandomNumBasedOnDifficulty();
+        var num2 = getRandomNumBasedOnDifficulty();
+
+        while(num1 == num2) {
+            num2 = getRandomNumBasedOnDifficulty();
+        }
+        
+        var topNum = Math.Max(num1, num2);
+        var answer = Math.Min(num1, num2);
+        
+        problem.topNum = $"{topNum}";
+        problem.answer = $"{answer}";
+        problem.bottomNum = $"{topNum + answer}";
+    }
     private int getRandomNumBasedOnDifficulty()
     {
         switch (config.selectedDifficulty)
@@ -71,6 +92,7 @@
     public void OnProblemStateChanged() {
         if(problem.numpadInput == problem.answer) {
             GenerateProblem();
+            correctCount++;
         }
         StateHasChanged();
     }

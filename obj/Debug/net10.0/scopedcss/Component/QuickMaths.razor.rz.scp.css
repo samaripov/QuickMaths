@@ -3,6 +3,14 @@ img[b-rdcaplgchl] {
     width: 18rem;
     height: 18rem;
 }
+button[b-rdcaplgchl] {
+    width: 18rem;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-start;
+    justify-self: start;
+}
+
 #operation[b-rdcaplgchl] {
     position: absolute;
     color: rgb(226, 43, 217);

@@ -3,6 +3,14 @@ img {
     width: 18rem;
     height: 18rem;
 }
+button {
+    width: 18rem;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-start;
+    justify-self: start;
+}
+
 #operation {
     position: absolute;
     color: rgb(226, 43, 217);

@@ -17,6 +17,12 @@ input {
     background: transparent;
     padding: 0.2rem;
 }
+button {
+    background: rgb(156, 116, 252);
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+}
 #operations input[type="checkbox"] {
     display: none;
 }
