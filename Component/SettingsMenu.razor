@@ -10,9 +10,9 @@
         <div class="vertical">
             <label for="roundTime">Exercise Time</label>
             <div id="roundTime">
-                <InputNumber id="minutes" @bind-Value="minutes" placeholder="Minutes" max=59 min=0/>
+                <InputNumber id="minutes" @bind-Value="minutes" placeholder="Minutes" max=59 min=0 />
                 <span> : </span>
-                <InputNumber id="seconds" @bind-Value="seconds" placeholder="Seconds" max=59 min=0/>
+                <InputNumber id="seconds" @bind-Value="seconds" placeholder="Seconds" max=59 min=0 />
             </div>
             <div class="horizontal-container time-label">
                 <p>Min</p>
@@ -25,12 +25,16 @@
                 @foreach (var option in config.difficultyOptions)
                 {
                     <div>
-                        <input 
-                            id="@option" 
-                            type="radio" 
-                            name="difficultyOptions" 
-                            value="@option"
-                        />
+                        @if (config.selectedDifficulty == option)
+                        {
+                            <input id="@option" type="radio" name="difficultyOptions" value="@option"
+                                @onchange="(e) => UpdateDifficulty(option)" checked />
+                        }
+                        else
+                        {
+                            <input id="@option" type="radio" name="difficultyOptions" value="@option"
+                                @onchange="(e) => UpdateDifficulty(option)" />
+                        }
                         <label id="@option-label" for="@option">@option</label>
                     </div>
                 }
@@ -43,10 +47,17 @@
             @foreach (var option in config.operationsOptions)
             {
                 <div>
-                    <input type="checkbox" id="@option" value="@option"
-                        @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())"
-                        @checked="@config.selectedOperations.Contains(option)" />
-                    <label for="@option">@option</label>    
+                    @if (config.selectedOperations.Contains(option))
+                    {
+                        <input type="checkbox" id="@option" value="@option"
+                            @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())" checked />
+                    }
+                    else
+                    {
+                        <input type="checkbox" id="@option" value="@option"
+                            @onchange="(e) => UpdateSelectedOptions(option, e.Value.ToString())" />
+                    }
+                    <label for="@option">@option</label>
                 </div>
             }
         </div>
@@ -56,7 +67,6 @@
 
 @code {
     private EditContext? editContext;
-    private string selectedDifficulty = "";
     private List<string> selectedOperations = new List<string>();
 
     private int minutes = 5;
@@ -64,15 +74,13 @@
     protected override void OnInitialized()
     {
         editContext = new EditContext(this);
-        selectedDifficulty = config.selectedDifficulty;
+        selectedOperations = config.selectedOperations;
         minutes = config.roundDurationInSeconds / 60;
         seconds = config.roundDurationInSeconds % 60;
     }
     private void HandleValidSubmit()
     {
-        config.selectedDifficulty = selectedDifficulty;
         config.roundDurationInSeconds = minutes * 60 + seconds;
-        Console.WriteLine(selectedDifficulty);
         Console.WriteLine(config.ToString());
     }
     private void UpdateSelectedOptions(string option, string value)
@@ -85,5 +93,9 @@
         {
             config.selectedOperations.Remove(option);
         }
+    }
+
+    private void UpdateDifficulty(string option) {
+        config.selectedDifficulty = option;
     }
 }
