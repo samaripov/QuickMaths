@@ -39,6 +39,9 @@
             case "×":
                 GenerateMultiplicationProblem();
                 break;
+            case "÷":
+                GenerateDivisionProblem();
+                break;
         }
         longestNumberLength = Math.Max(Math.Max(problem.topNum.Length, problem.bottomNum.Length), problem.numpadInput.Length);
     }
@@ -55,19 +58,17 @@
 
     private void GenerateSubtractionProblem()
     {
-        var num1 = getRandomNumBasedOnDifficulty();
-        var num2 = getRandomNumBasedOnDifficulty();
+        var topNum = getRandomNumBasedOnDifficulty();
+        var bottomNum = getRandomNumBasedOnDifficulty();
 
-        while(num1 == num2) {
-            num2 = getRandomNumBasedOnDifficulty();
+        while(topNum <= bottomNum) {
+            topNum = getRandomNumBasedOnDifficulty();
+            bottomNum = getRandomNumBasedOnDifficulty();
         }
         
-        var topNum = Math.Max(num1, num2);
-        var answer = Math.Min(num1, num2);
-        
         problem.topNum = $"{topNum}";
-        problem.answer = $"{answer}";
-        problem.bottomNum = $"{topNum + answer}";
+        problem.bottomNum = $"{bottomNum}";
+        problem.answer = $"{topNum - bottomNum}";
     }
 
     private void GenerateMultiplicationProblem(){
@@ -79,14 +80,27 @@
         problem.answer = $"{topNum * bottomNum}";
     }
 
+    private void GenerateDivisionProblem()
+    {
+        var num1 = getRandomNumBasedOnDifficulty();
+        var num2 = getRandomNumBasedOnDifficulty();
+
+        var topNum = Math.Max(num1, num2);
+        var answer = Math.Min(num1, num2);
+        
+        problem.topNum = $"{topNum}";
+        problem.answer = $"{answer}";
+        problem.bottomNum = $"{topNum + answer}";
+    }
+
     private int getRandomNumBasedOnDifficulty()
     {
         switch (config.selectedDifficulty)
         {
             case "Normal":
-                return random.Next(2, 100);
+                return random.Next(10, 100);
             case "Hard":
-                return random.Next(2,100);
+                return random.Next(100,1000);
         }
         // Easy
         return random.Next(1,10);
