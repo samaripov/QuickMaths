@@ -1,0 +1,17 @@
+@inject ModuleState moduleState
+
+<div class="module @(moduleState.Visible ? "visable" : "hidden")">
+    <div class="content">
+        @ChildContent
+        <button @onclick="cancel">Dismiss</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    private void cancel(){
+        moduleState.Visible = false;
+    }
+}

@@ -6,6 +6,7 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+builder.Services.AddSingleton<ModuleState>();
 builder.Services.AddSingleton<Random>();
 builder.Services.AddSingleton<CurrentProblem>();
 builder.Services.AddSingleton<QuickMathsConfig>();

@@ -1,0 +1,30 @@
+button[b-jgsied4hxz] {
+    width: 100%;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.module[b-jgsied4hxz] {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.module .content[b-jgsied4hxz] {
+    border: 3px solid rgb(156, 116, 252);
+    box-shadow: rgba(124, 124, 124, 0.397) 5px 5px 5px 5px;
+    background: white;
+    border-radius: 0.5rem;
+    padding:1rem;
+    min-width: 20rem;
+    min-height: fit-content;
+}
+
+.visable[b-jgsied4hxz] {
+    display:flex;
+}
+.hidden[b-jgsied4hxz] {
+    display: none;
+}

@@ -17,6 +17,7 @@ button {
 
 #operation {
     position: absolute;
+    z-index: 0;
     color: rgb(226, 43, 217);
     font-size: 3rem;
     font-weight: bold;
