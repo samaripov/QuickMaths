@@ -11,26 +11,28 @@
         <img src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
         <div class="equation">
             <p id="top-num">@problem.topNum</p>
-            <p style="transform: translate(-@(problem.numpadInput.Length * 2.8)rem, 3.7rem)" id="operation">@operation</p>
+            <p style="transform: translate(-@(longestNumberLength * 2.8)rem, 3.7rem)" id="operation">@operation</p>
             <p id="bottom-num">@problem.bottomNum</p>
-            <p style="width: @(problem.numpadInput.Length * 2.8)rem" id="line"></p>
+            <p style="width: @(longestNumberLength * 2.8)rem" id="line"></p>
             <p id="result">@problem.numpadInput</p>
         </div>
     </div>
 </div>
 
 @code {
+    private int longestNumberLength = 1;
     private string operation = "";
     private void GenerateProblem()
     {
         operation = config.selectedOperations[random.Next(config.selectedOperations.Count)];
-
+        problem.numpadInput = "0";
         switch (operation)
         {
             case "+":
                 GeneratePlusProblem();
                 break;
         }
+        longestNumberLength = Math.Max(Math.Max(problem.topNum.Length, problem.bottomNum.Length), problem.numpadInput.Length);
     }
 
     private void GeneratePlusProblem()
@@ -56,12 +58,20 @@
         return random.Next(1,10);
     }
     protected override void OnInitialized()
-    {
+    {   
         GenerateProblem();
-        problem.CurrentProblemStateChanged += StateHasChanged;
+        problem.CurrentProblemStateChanged += OnProblemStateChanged;
+        
     }
     public void Dispose()
     {
         problem.CurrentProblemStateChanged -= StateHasChanged;
+    }
+
+    public void OnProblemStateChanged() {
+        if(problem.numpadInput == problem.answer) {
+            GenerateProblem();
+        }
+        StateHasChanged();
     }
 }

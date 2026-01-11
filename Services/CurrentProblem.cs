@@ -1,6 +1,6 @@
 public class CurrentProblem
 {
-    public string answer { get; set; } = "0";
+    public string answer { get; set; } = "";
 
     public string _topNum { get; set; } = "0";
     public string topNum
@@ -33,7 +33,6 @@ public class CurrentProblem
             OnCurrentProblemStateChanged();
         }
     }
-
     public event Action CurrentProblemStateChanged;
     protected virtual void OnCurrentProblemStateChanged()
     {
