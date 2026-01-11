@@ -1,10 +1,10 @@
+@inject QuickMathsConfig config;
+
 <EditForm EditContext="editContext" OnValidSubmit="HandleValidSubmit">
-
-
     <div class="horizontal-container" style="gap: 2rem;">
         <div class="vertical">
             <label for="inputText">Numbers to focus on</label>
-            <InputText id="inputText" @bind-Value="inputText" placeholder="(e.g. 1, 2, 7, 4 ...)" />
+            <InputText id="inputText" @bind-Value="config.numbersToFocusOn" placeholder="(e.g. 1, 2, 7, 4 ...)" />
         </div>
 
         <div class="vertical">
@@ -51,12 +51,8 @@
 
 @code {
     private EditContext? editContext;
-    protected override void OnInitialized()
-    {
-        editContext = new EditContext(this);
-    }
     private string inputText = "2, 3, 4, 5, 6, 7, 8, 9";
-    private string selectedDifficulty = "Medium";
+    private string selectedDifficulty = "";
     private string[] difficultyOptions = new string[] { "Easy", "Normal", "Hard" };
 
     private List<string> selectedOperations = new List<string>();
@@ -64,9 +60,16 @@
 
     private int minutes = 5;
     private int seconds = 0;
+    protected override void OnInitialized()
+    {
+        editContext = new EditContext(this);
+        selectedDifficulty = config.selectedDifficulty;
+    }
     private void HandleValidSubmit()
     {
-
+        config.selectedDifficulty = selectedDifficulty;
+        Console.WriteLine(selectedDifficulty);
+        Console.WriteLine(config.ToString());
     }
     private void UpdateSelectedOptions(string option, string value)
     {
