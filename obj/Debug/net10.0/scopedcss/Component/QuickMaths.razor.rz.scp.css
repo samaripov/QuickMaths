@@ -1,3 +1,42 @@
+img[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    width: 18rem;
+    height: 18rem;
+}
+#operation[b-rdcaplgchl] {
+    position: absolute;
+    color: rgb(226, 43, 217);
+    font-size: 3rem;
+    font-weight: bold;
+    transform: translate(-5.5rem, 3.7rem);
+}
+#top-num[b-rdcaplgchl] {
+    transform: translateY(0.5rem);
+}
+
+#bottom-num[b-rdcaplgchl] {
+    transform: translateY(-1rem);
+}
+#line[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    background: rgb(226, 43, 217);
+    height: 0.25rem;
+    width: 5.5rem;
+    transform: translateY(-1.25rem);
+}
+#result[b-rdcaplgchl] {
+    transform: translateY(-1.5rem);
+}
+.equation[b-rdcaplgchl] {
+    width: 13rem;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    align-items: end;   
+}
+.equation p[b-rdcaplgchl] {
+    font-size: 5rem;
+}
 .problems-and-stats[b-rdcaplgchl] {
     display: flex;
     gap: 1rem;
@@ -6,13 +45,6 @@
     align-items: center;
     padding-inline: 1rem;
 }
-
-img[b-rdcaplgchl] {
-    border-radius: 0.5rem;
-    width: 18rem;
-    height: 18rem;
-}
-
 .horizontal-container[b-rdcaplgchl] {
     display: flex;
     gap: 1rem;

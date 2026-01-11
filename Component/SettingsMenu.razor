@@ -9,14 +9,14 @@
 
         <div class="vertical">
             <label for="roundTime">Exercise Time</label>
+            <div id="roundTime">
+                <InputNumber id="minutes" @bind-Value="minutes" placeholder="Minutes" max=59 min=0/>
+                <span> : </span>
+                <InputNumber id="seconds" @bind-Value="seconds" placeholder="Seconds" max=59 min=0/>
+            </div>
             <div class="horizontal-container time-label">
                 <p>Min</p>
                 <p>Sec</p>
-            </div>
-            <div id="roundTime">
-                <InputNumber id="minutes" @bind-Value="minutes" placeholder="Minutes" />
-                <span> : </span>
-                <InputNumber id="seconds" @bind-Value="seconds" placeholder="Seconds" />
             </div>
         </div>
         <div class="vertical">
@@ -60,7 +60,7 @@
     private string[] difficultyOptions = new string[] { "Easy", "Normal", "Hard" };
 
     private List<string> selectedOperations = new List<string>();
-    private List<string> operationsOptions = new List<string> { "+", "-", "x", "÷" };
+    private List<string> operationsOptions = new List<string> { "+", "-", "×", "÷" };
 
     private int minutes = 5;
     private int seconds = 0;
