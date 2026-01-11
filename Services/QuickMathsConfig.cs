@@ -1,5 +1,4 @@
 using System.Dynamic;
-
 public class QuickMathsConfig
 {
     public List<string> selectedOperations { get; set; } = new List<string> { "+", "-", "×", "÷" };

@@ -1,4 +1,6 @@
 @inject CurrentProblem problem
+@inject QuickMathsConfig config
+@inject Random random
 
 <div class="problems-and-stats">
     <div class="horizontal-container stat-bar">
@@ -8,9 +10,9 @@
     <div class="horizontal-container">
         <img src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
         <div class="equation">
-            <p id="top-num">00</p>
-            <p id="operation">×</p>
-            <p id="bottom-num">00</p>
+            <p id="top-num">@problem.topNum</p>
+            <p id="operation">@operation</p>
+            <p id="bottom-num">@problem.bottomNum</p>
             <p id="line"></p>
             <p id="result">@problem.numpadInput</p>
         </div>
@@ -18,13 +20,19 @@
 </div>
 
 @code {
+    private string operation = ""; 
+    private void GenerateProblem() {
+        operation = config.selectedOperations[random.Next(config.selectedOperations.Count)];
+    }
+
     protected override void OnInitialized()
     {
+        GenerateProblem();
         // Subscribe to the event
-        problem.numpadInputChanged += StateHasChanged;
+        problem.CurrentProblemStateChanged += StateHasChanged;
     }
     public void Dispose()
     {
-        problem.numpadInputChanged -= StateHasChanged;
+        problem.CurrentProblemStateChanged -= StateHasChanged;
     }
 }

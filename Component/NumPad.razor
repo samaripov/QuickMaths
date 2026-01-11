@@ -40,11 +40,14 @@
     private bool playState = false;
     private void numpadNumber(int num)
     {
-        if (problem.numpadInput == "0")
+        if (problem.numpadInput.Length < 5)
         {
-            problem.numpadInput = "";
+            if (problem.numpadInput == "0")
+            {
+                problem.numpadInput = "";
+            }
+            problem.numpadInput = $"{problem.numpadInput}{num}";
         }
-        problem.numpadInput = $"{problem.numpadInput}{num}";
     }
     private void backspace()
     {
@@ -59,5 +62,5 @@
         playState = !playState;
     }
 
-    
+
 }
