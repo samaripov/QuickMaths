@@ -2,9 +2,9 @@ using System.Dynamic;
 
 public class QuickMathsConfig
 {
-    public List<string> selectedOperations { get; set; } = new List<string> { "+", "-", "×" };
+    public List<string> selectedOperations { get; set; } = new List<string> { "+", "-", "×", "÷" };
     // Math configs
-    public int roundDurationInSeconds { get; set; } = 305;
+    public int roundDurationInSeconds { get; set; } = 300;
     public string numbersToFocusOn { get; set; } = "2, 3, 4, 5, 6, 7, 8, 9";
     public string selectedDifficulty { get; set; } = "Normal";
 

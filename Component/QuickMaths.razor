@@ -1,3 +1,5 @@
+@inject CurrentProblem problem
+
 <div class="problems-and-stats">
     <div class="horizontal-container stat-bar">
         <p>Time 5:00</p>
@@ -10,7 +12,7 @@
             <p id="operation">×</p>
             <p id="bottom-num">00</p>
             <p id="line"></p>
-            <p id="result">00</p>
+            <p id="result">@problem.numpadInput</p>
         </div>
     </div>
 </div>
