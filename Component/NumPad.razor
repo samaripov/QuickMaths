@@ -43,6 +43,7 @@
 
     protected override void OnInitialized()
     {
+        problem.NumPadStateChanged += StateHasChanged;
         if (problem.timer is null)
         {
             problem.timer = new System.Timers.Timer(1000);
@@ -65,9 +66,6 @@
         {
             problem.timerTime -= 1;
         }
-
-        // Invoke StateHasChanged safely to update the UI
-        await InvokeAsync(StateHasChanged);
     }
 
     private void numpadNumber(int num)
@@ -101,9 +99,9 @@
             problem.timer.Stop();
         }
     }
-
     public void Dispose()
     {
+        problem.NumPadStateChanged -= StateHasChanged;
         if (problem.timer != null)
         {
             problem.timer.Elapsed -= TimerElapsed; // Unsubscribe

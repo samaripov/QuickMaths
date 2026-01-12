@@ -48,9 +48,16 @@ public class CurrentProblem
         set
         {
             _timerRunning = value;
-            OnCurrentProblemStateChanged();
+            OnNumPadStateChanged();
         }
     }
+    public event Action NumPadStateChanged;
+    protected virtual void OnNumPadStateChanged()
+    {
+        NumPadStateChanged?.Invoke();
+    }
+
+
     public System.Timers.Timer? timer { get; set; }
     private string _numpadInput { get; set; } = "0";
     public string numpadInput
