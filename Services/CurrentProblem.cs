@@ -1,7 +1,7 @@
 public class CurrentProblem
 {
     public string answer { get; set; } = "";
-    public int _timerTime { get; set; } = 300;
+    private int _timerTime { get; set; } = 300;
     public int timerTime
     {
         get => _timerTime;
@@ -11,17 +11,7 @@ public class CurrentProblem
             OnCurrentProblemStateChanged();
         }
     }
-    public int _correctCount { get; set; } = 0;
-    public int correctCount
-    {
-        get => _correctCount;
-        set
-        {
-            _correctCount = value;
-            OnCurrentProblemStateChanged();
-        }
-    }
-    public string _topNum { get; set; } = "0";
+    private string _topNum { get; set; } = "0";
     public string topNum
     {
         get => _topNum;
@@ -31,7 +21,7 @@ public class CurrentProblem
             OnCurrentProblemStateChanged();
         }
     }
-    public string _bottomNum { get; set; } = "0";
+    private string _bottomNum { get; set; } = "0";
     public string bottomNum
     {
         get => _bottomNum;
@@ -41,7 +31,7 @@ public class CurrentProblem
             OnCurrentProblemStateChanged();
         }
     }
-    public string _operation = "+";
+    private string _operation = "+";
     public string operation
     {
         get => _operation;
@@ -51,7 +41,7 @@ public class CurrentProblem
             OnCurrentProblemStateChanged();
         }
     }
-    public bool _timerRunning { get; set; } = false;
+    private bool _timerRunning { get; set; } = false;
     public bool timerRunning
     {
         get => _timerRunning;
@@ -62,7 +52,7 @@ public class CurrentProblem
         }
     }
     public System.Timers.Timer? timer { get; set; }
-    public string _numpadInput { get; set; } = "0";
+    private string _numpadInput { get; set; } = "0";
     public string numpadInput
     {
         get => _numpadInput;

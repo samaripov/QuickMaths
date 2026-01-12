@@ -12,8 +12,8 @@
 
 <div class="problems-and-stats">
     <div class="horizontal-container stat-bar">
-        <p>Time @(problem.timerTime / 60):@(problem.timerTime % 60)</p>
-        <p>Correct @problem.correctCount</p>
+        <p>Time @(problem.timerTime / 60):@(problem.timerTime % 60 < 10 ? "0" : "")@(problem.timerTime % 60)</p>
+        <p>Correct @correctCount</p>
     </div>
     <div class="horizontal-container">
         <img id="feedback-img" src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
@@ -41,6 +41,7 @@
 @code {
     private bool answerRevealed = false;
     private int longestNumberLength = 4;
+    private int correctCount = 0;
     private async void RevealAnswer()
     {
         moduleState.Visible = true;
@@ -128,7 +129,6 @@
     {  
         GenerateProblem();
         problem.CurrentProblemStateChanged += OnProblemStateChanged;
-
     }
     public void Dispose()
     {
@@ -138,16 +138,16 @@
     {
         if (problem.numpadInput == problem.answer)
         {
-            GenerateProblem();
-            if (!answerRevealed)
+            if (answerRevealed == false)
             {
-                problem.correctCount += 1;
+                correctCount += 1;
                 await JSRuntime.InvokeVoidAsync("correct");
             }
             else
             {
                 answerRevealed = false;
             }
+            GenerateProblem();
         }
         StateHasChanged();
     }

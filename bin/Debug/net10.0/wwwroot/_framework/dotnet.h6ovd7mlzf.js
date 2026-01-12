@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "MathGame",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-00mjmL8NAK6ekZAy0YEUD+D4ZopZFRKq45TarKc3ExY=",
+    "hash": "sha256-JNoIJ/a+TwvjsstZK/kIr0K8pr5qeBYKf+7K6zlNcaM=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.cs8mcre4gh.js"
@@ -1039,15 +1039,15 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MathGame.wasm",
-        "name": "MathGame.ga5ir5blvu.wasm",
-        "integrity": "sha256-SAr+hVL56shI2ybWd7QW8ah2mK6uQWJplNhUNilj+dU="
+        "name": "MathGame.c35tdb7gbf.wasm",
+        "integrity": "sha256-+JcUCfpMRG7vyTBXqz2BbQOFJ/3WdjkhcFGTcbdnsWA="
       }
     ],
     "pdb": [
       {
         "virtualPath": "MathGame.pdb",
-        "name": "MathGame.191hpx06b8.pdb",
-        "integrity": "sha256-lX3sRxjR1w5r9S0Q/5dG5E6+8LLC9uqPlHmnfyJsvb4="
+        "name": "MathGame.8hpy989u58.pdb",
+        "integrity": "sha256-hHFTvImdroa0G1demZuKDrGh/dhYwWBD8sjb3aP73rk="
       }
     ],
     "libraryInitializers": [
