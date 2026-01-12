@@ -1,0 +1,281 @@
+/* /Component/DialogBox.razor.rz.scp.css */
+button[b-jgsied4hxz] {
+    width: 100%;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.module[b-jgsied4hxz] {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.module .content[b-jgsied4hxz] {
+    border: 3px solid rgb(156, 116, 252);
+    box-shadow: rgba(124, 124, 124, 0.397) 5px 5px 5px 5px;
+    background: white;
+    border-radius: 0.5rem;
+    padding:1rem;
+    min-width: 20rem;
+    min-height: fit-content;
+}
+
+.visable[b-jgsied4hxz] {
+    display:flex;
+}
+.hidden[b-jgsied4hxz] {
+    display: none;
+}
+/* /Component/NumPad.razor.rz.scp.css */
+.numpad[b-71ih1ypdgt] {
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    padding: 0.5rem;
+}
+
+.numpad button[b-71ih1ypdgt] {
+    font-weight: 1000;
+    width: 7rem;
+    height: 7rem;
+    color: rgb(156, 116, 252);
+    border: 3px solid rgb(156, 116, 252);
+    border-radius: 0.5rem;
+    font-size: 5rem;
+    transition: all 0.05s ease-in-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.numpad button:hover:not(:disabled)[b-71ih1ypdgt] {
+    cursor: pointer;
+    color: rgb(156, 116, 252);
+    transform: scale(105%);
+}
+.play-pause svg[b-71ih1ypdgt] {
+    width: 3rem;
+    height: 3rem;
+}
+@media only screen and (max-width: 1000px) {
+    .numpad[b-71ih1ypdgt] {
+        visibility: visible;
+    }
+    .numpad button[b-71ih1ypdgt] {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .numpad[b-71ih1ypdgt] {
+        visibility: visible;
+    }
+    .numpad button[b-71ih1ypdgt] {
+        font-size: 5rem;
+        width: 6rem;
+        height: 6rem;
+    }
+}
+/* /Component/QuickMaths.razor.rz.scp.css */
+img[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    width: 15rem;
+    height: 15rem;
+    align-self: center;
+}
+button[b-rdcaplgchl] {
+    display: block;
+    width: 15rem;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-start;
+    justify-self: start;
+    padding: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+#operation[b-rdcaplgchl] {
+    position: absolute;
+    z-index: 0;
+    color: rgb(226, 43, 217);
+    font-size: 3rem;
+    font-weight: bold;
+}
+#top-num[b-rdcaplgchl] {
+    transform: translateY(0.5rem);
+}
+
+#bottom-num[b-rdcaplgchl] {
+    transform: translateY(-1rem);
+}
+#line[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    background: rgb(226, 43, 217);
+    height: 0.25rem;
+    transform: translateY(-1.25rem);
+}
+#result[b-rdcaplgchl] {
+    transform: translateY(-1.5rem);
+}
+.equation[b-rdcaplgchl] {
+    width: 13rem;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    align-items: end;   
+}
+.equation p[b-rdcaplgchl] {
+    font-size: 5rem;
+}
+.problems-and-stats[b-rdcaplgchl] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+}
+.horizontal-container[b-rdcaplgchl] {
+    display: flex;
+    gap: 1rem;
+}
+.stat-bar[b-rdcaplgchl] {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.stat-bar *[b-rdcaplgchl] {
+    font-size: 2.5rem;
+}
+/* /Component/SettingsMenu.razor.rz.scp.css */
+label[b-b8neyzioft] {
+    font-size: 2rem;
+}
+form > div[b-b8neyzioft] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[b-b8neyzioft] {
+    background: rgb(156, 116, 252);
+    color: white;
+    margin-block-start: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+    font-size: 4rem;
+}
+button:hover[b-b8neyzioft] {
+    cursor: pointer;
+    background: rgb(110, 55, 240);
+}
+#difficulty > div[b-b8neyzioft] {
+    display: flex;
+}
+
+#operations[b-b8neyzioft] {
+    display: flex;
+    gap: 0.25rem;
+}
+#operations > div[b-b8neyzioft] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#operations label[b-b8neyzioft] {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+.vertical[b-b8neyzioft] {
+    display: flex;
+    flex-direction: column;
+}
+.horizontal-container[b-b8neyzioft] {
+    display: flex;
+}
+
+.time-label[b-b8neyzioft] {
+    font-size: 2rem;
+    gap: 5rem;
+}
+/* /Layout/MainLayout.razor.rz.scp.css */
+main[b-y0ouk7zasq] {
+    background-image: url("./public/dimitri-iakymuk-mcr10j_b6sm-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    color: rgb(156, 116, 252);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* /Pages/Home.razor.rz.scp.css */
+.container[b-n67vpdv12x] {
+    background: rgb(255, 255, 255);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 4rem;
+    width: 57rem;
+    height: 38rem;
+}
+.horizontal-container[b-n67vpdv12x] {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+.space-between[b-n67vpdv12x] {
+    justify-content: space-between;
+}
+
+.gear svg[b-n67vpdv12x] {
+    transition: all 0.25s;
+    width: 7rem;
+    height: 7rem;
+}
+
+.rotate svg[b-n67vpdv12x] {
+    transform: rotate(180deg);
+}
+.center-children[b-n67vpdv12x] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .info-bar *[b-n67vpdv12x] {
+        font-size: 1.5rem;
+    }
+
+    .center-children[b-n67vpdv12x] {
+        flex-direction: column;
+    }
+
+    .container[b-n67vpdv12x] {
+        width: 90%;
+        font-size: 2rem;
+    }
+
+    .gear svg[b-n67vpdv12x] {
+        width: 4rem;
+        height: 4rem;
+    }
+}

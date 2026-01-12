@@ -12,14 +12,14 @@
 
 <div class="problems-and-stats">
     <div class="horizontal-container stat-bar">
-        <p>Time 5:00</p>
-        <p>Correct @correctCount</p>
+        <p>Time @(problem.timerTime / 60):@(problem.timerTime % 60)</p>
+        <p>Correct @problem.correctCount</p>
     </div>
     <div class="horizontal-container">
         <img id="feedback-img" src="./public/correct/img_9855.jpg" alt="Cat with human hand showing thumbs up">
         <div class="equation">
             <p id="top-num">@problem.topNum</p>
-            <p style="transform: translate(-@(longestNumberLength * 2.8)rem, 3.7rem)" id="operation">@operation</p>
+            <p style="transform: translate(-@(longestNumberLength * 2.8)rem, 3.7rem)" id="operation">@problem.operation</p>
             <p id="bottom-num">@problem.bottomNum</p>
             <p style="width: @(longestNumberLength * 2.8)rem" id="line"></p>
             <p id="result">@problem.numpadInput</p>
@@ -39,20 +39,20 @@
 </div>
 
 @code {
-    private int correctCount = 0;
     private bool answerRevealed = false;
-    private int longestNumberLength = 1;
-    private string operation = "";
-    private void RevealAnswer()
+    private int longestNumberLength = 4;
+    private async void RevealAnswer()
     {
         moduleState.Visible = true;
         answerRevealed = true;
+        await JSRuntime.InvokeVoidAsync("incorrect");
     }
     private void GenerateProblem()
-    {
-        operation = config.selectedOperations[random.Next(config.selectedOperations.Count)];
+    {   
+        problem.answer = "";
+        problem.operation = config.selectedOperations[random.Next(config.selectedOperations.Count)];
         problem.numpadInput = "0";
-        switch (operation)
+        switch (problem.operation)
         {
             case "+":
                 GenerateAdditionProblem();
@@ -67,7 +67,7 @@
                 GenerateDivisionProblem();
                 break;
         }
-        longestNumberLength = Math.Max(Math.Max(problem.topNum.Length, problem.bottomNum.Length), problem.numpadInput.Length);
+        StateHasChanged();
     }
 
     private void GenerateAdditionProblem()
@@ -120,14 +120,12 @@
         {
             case "Normal":
                 return random.Next(10, 100);
-            case "Hard":
-                return random.Next(100, 1000);
         }
         // Easy
         return random.Next(1, 10);
     }
     protected override void OnInitialized()
-    {
+    {  
         GenerateProblem();
         problem.CurrentProblemStateChanged += OnProblemStateChanged;
 
@@ -136,21 +134,20 @@
     {
         problem.CurrentProblemStateChanged -= StateHasChanged;
     }
-
     public async void OnProblemStateChanged()
     {
         if (problem.numpadInput == problem.answer)
         {
+            GenerateProblem();
             if (!answerRevealed)
             {
-                correctCount++;
+                problem.correctCount += 1;
                 await JSRuntime.InvokeVoidAsync("correct");
             }
             else
             {
                 answerRevealed = false;
             }
-            GenerateProblem();
         }
         StateHasChanged();
     }

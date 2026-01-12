@@ -8,7 +8,7 @@ public class QuickMathsConfig
     public string selectedDifficulty { get; set; } = "Normal";
 
     // Options
-    public string[] difficultyOptions { get; } = { "Easy", "Normal", "Hard" };
+    public string[] difficultyOptions { get; } = { "Easy", "Normal"};
     public List<string> operationsOptions { get; } = new List<string> { "+", "-", "×", "÷" };
 
     // Singleton methods

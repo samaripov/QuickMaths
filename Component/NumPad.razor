@@ -1,5 +1,8 @@
+@using System.Timers
 @inject CurrentProblem problem
+@inject IJSRuntime JSRuntime
 
+@inject QuickMathsConfig config
 <div class="numpad">
     <button @onclick="() => numpadNumber(7)">7</button>
     <button @onclick="() => numpadNumber(8)">8</button>
@@ -10,8 +13,8 @@
     <button @onclick="() => numpadNumber(1)">1</button>
     <button @onclick="() => numpadNumber(2)">2</button>
     <button @onclick="() => numpadNumber(3)">3</button>
-    <button @onclick="playOrPause" class="play-pause">
-        @if (playState)
+    <button @onclick="timerStartPause" class="play-pause">
+        @if (problem.timerRunning)
         {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1025 1024">
                 <path fill="#9c74fc"
@@ -37,7 +40,36 @@
 </div>
 
 @code {
-    private bool playState = false;
+
+    protected override void OnInitialized()
+    {
+        if (problem.timer is null)
+        {
+            problem.timer = new System.Timers.Timer(1000);
+            problem.timer.Elapsed += TimerElapsed;
+        } else {
+            problem.timer.Stop();
+        }
+        problem.timerTime = config.roundDurationInSeconds;
+    }
+    private async void TimerElapsed(object? _e, ElapsedEventArgs e)
+    {
+        if (problem.timerTime <= 0)
+        {
+            problem.timer.Stop();
+            problem.timerRunning = false;
+            problem.timerTime = config.roundDurationInSeconds;
+            await JSRuntime.InvokeVoidAsync("incorrect");
+        }
+        else
+        {
+            problem.timerTime -= 1;
+        }
+
+        // Invoke StateHasChanged safely to update the UI
+        await InvokeAsync(StateHasChanged);
+    }
+
     private void numpadNumber(int num)
     {
         if (problem.numpadInput.Length < 4)
@@ -57,10 +89,27 @@
             problem.numpadInput = "0";
         }
     }
-    private void playOrPause()
+    private void timerStartPause()
     {
-        playState = !playState;
+        problem.timerRunning = !problem.timerRunning;
+        if (problem.timerRunning)
+        {
+            problem.timer.Start();
+        }
+        else
+        {
+            problem.timer.Stop();
+        }
     }
 
-
+    public void Dispose()
+    {
+        if (problem.timer != null)
+        {
+            problem.timer.Elapsed -= TimerElapsed; // Unsubscribe
+            problem.timer.Stop();
+            problem.timer.Dispose();
+            problem.timer = null; // Set to null to prevent further access
+        }
+    }
 }

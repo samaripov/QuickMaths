@@ -1,0 +1,69 @@
+img[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    width: 15rem;
+    height: 15rem;
+    align-self: center;
+}
+button[b-rdcaplgchl] {
+    display: block;
+    width: 15rem;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-start;
+    justify-self: start;
+    padding: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+#operation[b-rdcaplgchl] {
+    position: absolute;
+    z-index: 0;
+    color: rgb(226, 43, 217);
+    font-size: 3rem;
+    font-weight: bold;
+}
+#top-num[b-rdcaplgchl] {
+    transform: translateY(0.5rem);
+}
+
+#bottom-num[b-rdcaplgchl] {
+    transform: translateY(-1rem);
+}
+#line[b-rdcaplgchl] {
+    border-radius: 0.5rem;
+    background: rgb(226, 43, 217);
+    height: 0.25rem;
+    transform: translateY(-1.25rem);
+}
+#result[b-rdcaplgchl] {
+    transform: translateY(-1.5rem);
+}
+.equation[b-rdcaplgchl] {
+    width: 13rem;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    align-items: end;   
+}
+.equation p[b-rdcaplgchl] {
+    font-size: 5rem;
+}
+.problems-and-stats[b-rdcaplgchl] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+}
+.horizontal-container[b-rdcaplgchl] {
+    display: flex;
+    gap: 1rem;
+}
+.stat-bar[b-rdcaplgchl] {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.stat-bar *[b-rdcaplgchl] {
+    font-size: 2.5rem;
+}

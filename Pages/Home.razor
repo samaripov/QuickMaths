@@ -1,11 +1,11 @@
 ﻿@page "/"
 @using MathGame.Component
-
+@inject CurrentProblem problem
 <PageTitle>Quick Maths</PageTitle>
 
 <div class="container">
     <div class="horizontal-container space-between">
-        <a @onclick="() => showMenu = !showMenu" class="@(showMenu ? "rotate" : "") gear">
+        <a @onclick="menuToggle" class="@(showMenu ? "rotate" : "") gear">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="rgb(156, 116, 252)">
                 <g fill="rgb(156, 116, 252)" fill-rule="evenodd" clip-rule="evenodd">
                     <path
@@ -33,4 +33,9 @@
 
 @code {
     private bool showMenu = false;
+    private void menuToggle()
+    {
+        showMenu = !showMenu;
+        problem.timerRunning = false;
+    }
 }

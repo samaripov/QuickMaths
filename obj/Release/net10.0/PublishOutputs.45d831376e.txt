@@ -1,0 +1,11 @@
+/home/sam/Desktop/Blazor/MathGame/publish/wwwroot/index.html
+/home/sam/Desktop/Blazor/MathGame/publish/publish/web.config
+/home/sam/Desktop/Blazor/MathGame/publish/publish/MathGame.runtimeconfig.json
+/home/sam/Desktop/Blazor/MathGame/publish/publish/MathGame.staticwebassets.endpoints.json
+/home/sam/Desktop/Blazor/MathGame/publish/publish/publish/MathGame.runtimeconfig.json
+/home/sam/Desktop/Blazor/MathGame/publish/publish/publish/MathGame.staticwebassets.endpoints.json
+/home/sam/Desktop/Blazor/MathGame/publish/publish/publish/publish/MathGame.runtimeconfig.json
+/home/sam/Desktop/Blazor/MathGame/publish/publish/publish/publish/MathGame.staticwebassets.endpoints.json
+/home/sam/Desktop/Blazor/MathGame/publish/MathGame.runtimeconfig.json
+/home/sam/Desktop/Blazor/MathGame/publish/dotnet.js
+/home/sam/Desktop/Blazor/MathGame/publish/web.config

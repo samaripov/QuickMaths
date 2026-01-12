@@ -1,0 +1,11 @@
+main[b-y0ouk7zasq] {
+    background-image: url("./public/dimitri-iakymuk-mcr10j_b6sm-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    color: rgb(156, 116, 252);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
